@@ -48,9 +48,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
 });
 const images = [
-    'ooo.jpeg',
-    'iii.jpeg',
-    'ppp.jpeg',
+    './ooo.jpeg',
+    './iii.jpeg',
+    './ppp.jpeg',
 ];
 let currentImg = 0;
 const sliderImg = document.querySelector('.slider-image');
