@@ -1,0 +1,231 @@
+.slider-container {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    margin: 2rem auto;
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.slider {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+    min-width: 100%;
+    flex-shrink: 0;
+}
+
+.slide img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    display: block;
+}
+
+.prev-btn, .next-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 1rem;
+    cursor: pointer;
+    font-size: 1.5rem;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s;
+}
+
+.prev-btn:hover, .next-btn:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.prev-btn {
+    left: 10px;
+}
+
+.next-btn {
+    right: 10px;
+}
+
+.dots {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.dot.active {
+    background-color: white;
+}
+
+@media (max-width: 768px) {
+    .slide img {
+        height: 300px;
+    }
+    
+    .prev-btn, .next-btn {
+        width: 35px;
+        height: 35px;
+        font-size: 1rem;
+        padding: 0.5rem;
+
+    }
+    .simple-slider {
+        position: relative;
+        width: 100%;
+        max-width: 800px;
+        margin: 2rem auto;
+    }
+    
+    .slider-wrapper {
+        width: 100%;
+        height: 500px;
+        overflow: hidden;
+        border-radius: 15px;
+    }
+    
+    .slider-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    
+    .simple-prev, .simple-next {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: rgba(0, 0, 0, 0.5);
+        color: white;
+        border: none;
+        padding: 1rem;
+        font-size: 1.5rem;
+        cursor: pointer;
+        border-radius: 50%;
+    }
+    
+    .simple-prev {
+        left: 10px;
+    }
+    
+    .simple-next {
+        right: 10px;
+    }
+}
+body {
+    background-image: url('/sources/img/yyery.png');
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* Фиксирует фон при скролле */
+}
+:root {
+    --bg-color: #ffffff;
+    --text-color: #111111;
+    --card-bg: #f5f5f7;
+    --card-border: #e0e0e0;
+    --btn-bg: #e8e8ed;
+    --btn-text: #111111;
+    --transition: 0.3s ease;
+    
+    color-scheme: light;
+  }
+  
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg-color: #121212;
+      --text-color: #e8e8ed;
+      --card-bg: #1e1e1e;
+      --card-border: #333333;
+      --btn-bg: #2a2a2a;
+      --btn-text: #e8e8ed;
+      color-scheme: dark;
+    }
+  }
+  
+  [data-theme="light"] {
+    --bg-color: #ffffff;
+    --text-color: #111111;
+    --card-bg: #f5f5f7;
+    --card-border: #e0e0e0;
+    --btn-bg: #e8e8ed;
+    --btn-text: #111111;
+    color-scheme: light;
+  }
+  
+  [data-theme="dark"] {
+    --bg-color: #121212;
+    --text-color: #e8e8ed;
+    --card-bg: #1e1e1e;
+    --card-border: #333333;
+    --btn-bg: #2a2a2a;
+    --btn-text: #e8e8ed;
+    color-scheme: dark;
+  }
+  
+  body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: system-ui, -apple-system, sans-serif;
+    margin: 0;
+    padding: 2rem;
+    transition: background-color var(--transition), color var(--transition);
+    line-height: 1.6;
+  }
+  
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  
+  #theme-toggle {
+    padding: 0.6rem 1.2rem;
+    background-color: var(--btn-bg);
+    color: var(--btn-text);
+    border: 1px solid var(--card-border);
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: all var(--transition);
+  }
+  
+  #theme-toggle:hover {
+    opacity: 0.85;
+    transform: translateY(-1px);
+  }
+  header {
+    position: relative;
+    margin-bottom: 2rem;
+    padding-right: 100px;
+}
+
+#theme-toggle {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
